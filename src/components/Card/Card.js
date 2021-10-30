@@ -1,18 +1,18 @@
 import "./Card.css";
 
-function Card() {
+function Card({card}) {
     return (
         <li className="card">
             <img
-                src="https://cdn3.xsolla.com/files/uploaded/113250/826adbf1a19ba19e6ba9af9308d2b309.png"
+                src={card.image}
                 className="card__image"
-                alt="Подпись к картике"
+                alt={card.genre}
             />
             <h2 className="card__title">
-                Rave Autumn
+                {card.name}
             </h2>
             <p className="card__date">
-                14
+                {card.date.split('.')[0]}
             </p>
             <button type="button" className="card__like card__like_active">
             </button>

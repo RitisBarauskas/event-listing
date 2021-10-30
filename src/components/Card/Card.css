@@ -11,9 +11,10 @@
 .card__image {
     position: absolute;
     z-index: 0;
-    max-width: 600px;
-    max-height: 400px;
+    width: 600px;
+    height: 400px;
     object-fit: cover;
+    border-radius: 6px;
 }
 
 .card__like {
@@ -35,7 +36,7 @@
     padding: 0;
     position: absolute;
     z-index: 2;
-    top: 292px;
+    bottom: 42px;
     left: 40px;
     font-family: Avenir, Arial, sans-serif;
     font-style: normal;
@@ -43,6 +44,7 @@
     font-size: 48px;
     line-height: 66px;
     color: #fff;
+    max-width: 600px;
 }
 
 .card__date {
