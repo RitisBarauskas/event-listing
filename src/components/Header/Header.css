@@ -1,0 +1,12 @@
+.header {
+    margin: 0;
+}
+
+.header__title {
+    margin: 0;
+    font-family: Avenir, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 66px;
+}
