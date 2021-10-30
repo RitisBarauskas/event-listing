@@ -1,4 +1,5 @@
 import "./Header.css";
+import Navigation from "../Navigation/Navigation";
 
 
 function Header() {
@@ -7,6 +8,7 @@ function Header() {
             <h1 className="header__title">
                 Event Listing
             </h1>
+            <Navigation />
         </header>
     )
 }
