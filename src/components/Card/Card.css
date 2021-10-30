@@ -1,0 +1,68 @@
+.card {
+    margin: 0;
+    padding: 0;
+    width: 600px;
+    height: 400px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.card__image {
+    position: absolute;
+    z-index: 0;
+    max-width: 600px;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.card__like {
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+    background: url("../../images/like.svg");
+    width: 16px;
+    height: 20px;
+    border: 0;
+}
+
+.card__title {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 2;
+    top: 292px;
+    left: 40px;
+    font-family: Avenir, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 66px;
+    color: #fff;
+}
+
+.card__date {
+    position: absolute;
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+    top: 40px;
+    left: 40px;
+    width: 80px;
+    height: 80px;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    font-family: Avenir, Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 66px;
+    color: #fff;
+}

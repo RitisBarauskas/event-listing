@@ -1,4 +1,15 @@
 .main {
     margin: 0;
+    padding-top: 42px;
+}
+
+.main__places {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 600px));
+    grid-auto-rows: minmax(200px, 400px);
+    gap: 40px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 

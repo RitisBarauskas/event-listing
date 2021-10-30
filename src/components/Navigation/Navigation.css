@@ -56,6 +56,8 @@
     background-color: #fff;
     margin-top: 1px;
     width: 200px;
+    border: 1px solid #2e282c;
+    box-sizing: border-box;
 }
 
 .navigation__item:hover {
@@ -73,6 +75,7 @@
     transition: 0.5s ease-in-out;
     position: absolute;
     list-style: none;
+    z-index: 99;
 }
 .navigation__container:hover .navigation__submenu {
     transform: scaleY(1);
