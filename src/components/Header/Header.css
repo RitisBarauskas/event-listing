@@ -1,5 +1,6 @@
 .header {
     margin: 0;
+    position: relative;
 }
 
 .header__title {
@@ -9,4 +10,29 @@
     font-weight: 900;
     font-size: 48px;
     line-height: 66px;
+    cursor: pointer;
+}
+
+.header__likes {
+    position: absolute;
+    width: 40px;
+    height: 50px;
+    top: 10px;
+    right: 10px;
+    border-radius: 6px;
+    background-color: #ffd342;
+    background-image: url("../../images/like.svg");
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-family: Avenir, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 22px;
+    color: #fff;
 }

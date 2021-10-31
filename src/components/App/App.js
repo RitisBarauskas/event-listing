@@ -50,6 +50,12 @@ function getSelectedCards(cards, month, city) {
     })
 }
 
+function getFavoriteCards(cards) {
+    return cards.filter((card) => {
+        return (localStorage.getItem(card.id));
+    })
+}
+
 function App() {
 
     const [cards, setCards] = useState([]);
@@ -57,15 +63,18 @@ function App() {
     const [cites, setCites] = useState([]);
     const [month, setMonth] = useState('');
     const [city, setCity] = useState('');
+    const [favorites, setFavorites] = useState('0');
+    const [isFavorites, setIsFavorites] = useState(false);
 
     useEffect(() => {
         api.getAllEvents().then((cards) => {
             setMonths(getAllMonths(cards)[1]);
             setCites(getAllCites(cards)[1]);
-            setMonth(getAllMonths(cards)[0]);
-            setCity(getAllCites(cards)[0]);
+            setMonth(cards[0].date.split('.')[1]);
+            setCity(cards[0].city);
             const newCards = getSelectedCards(cards, cards[0].date.split('.')[1], cards[0].city);
             setCards(newCards);
+            setFavorites(localStorage.length);
         }).catch((err) => console.log(err));
     }, []);
 
@@ -75,7 +84,7 @@ function App() {
             const newCards = getSelectedCards(cards, month, city);
             setCards(newCards);
             setMonth(month);
-        })
+        }).catch((err) => console.log(err));
     }
 
     const handleCityClick = (city) => {
@@ -84,7 +93,7 @@ function App() {
             const newCards = getSelectedCards(cards, month, city);
             setCards(newCards);
             setCity(city);
-        })
+        }).catch((err) => console.log(err));
     }
 
     const handleLikeClick = (card) => {
@@ -95,10 +104,32 @@ function App() {
         }
         api.getAllEvents().then((cards) =>{
             setMonths(getAllMonths(cards, month)[1]);
-            const newCards = getSelectedCards(cards, month, city);
+            let newCards = []
+            if (isFavorites){
+                newCards = getFavoriteCards(cards);
+            } else {
+                newCards = getSelectedCards(cards, month, city);
+            }
             setCards(newCards);
             setMonth(month);
-        });
+            setFavorites(localStorage.length);
+        }).catch((err) => console.log(err));
+    }
+
+    const handleFavoritesClick = () => {
+        setIsFavorites(true);
+        api.getAllEvents().then((cards) => {
+            const newCards = getFavoriteCards(cards);
+            setCards(newCards);
+        }).catch((err) => console.log(err));
+    }
+
+    const handleClickIndex = () => {
+        setIsFavorites(false);
+        api.getAllEvents().then((cards) => {
+            const newCards = getSelectedCards(cards, month, city);
+            setCards(newCards);
+        })
     }
 
   return (
@@ -113,10 +144,15 @@ function App() {
                         month={month}
                         onClickMonth={handleMonthClick}
                         onClickCity={handleCityClick}
+                        favorites={favorites}
+                        onClickFavorites={handleFavoritesClick}
+                        isFavorites={isFavorites}
+                        onClickIndex={handleClickIndex}
                       />
                       <Main
                         cards={cards}
                         onClickLike={handleLikeClick}
+                        isFavorites={isFavorites}
                       />
                   </Route>
               </Switch>

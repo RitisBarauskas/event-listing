@@ -74,6 +74,12 @@
     color: #fff;
 }
 
+.card__date_favorite {
+    padding-left: 10px;
+    height: 160px;
+    flex-direction: column;
+}
+
 @media screen and (max-width: 1520px) {
     .card {
         width: 540px;
