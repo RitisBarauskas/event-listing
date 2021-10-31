@@ -1,6 +1,9 @@
 import "./Card.css";
 
-function Card({card}) {
+function Card({card, onClickLike}) {
+    const isLiked = localStorage.getItem(card.id)
+    const cardLikeClass = `card__like ${isLiked ? 'card__like_active' : ''}`
+
     return (
         <li className="card">
             <img
@@ -14,7 +17,7 @@ function Card({card}) {
             <p className="card__date">
                 {card.date.split('.')[0]}
             </p>
-            <button type="button" className="card__like card__like_active">
+            <button type="button" className={cardLikeClass} onClick={_ => onClickLike(card)}>
             </button>
         </li>
     );

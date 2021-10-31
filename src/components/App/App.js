@@ -88,7 +88,17 @@ function App() {
     }
 
     const handleLikeClick = (card) => {
-        console.log(card);
+        if (localStorage.getItem(card.id)) {
+            localStorage.removeItem(card.id);
+        } else {
+            localStorage.setItem(card.id, 'like');
+        }
+        api.getAllEvents().then((cards) =>{
+            setMonths(getAllMonths(cards, month)[1]);
+            const newCards = getSelectedCards(cards, month, city);
+            setCards(newCards);
+            setMonth(month);
+        });
     }
 
   return (

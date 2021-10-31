@@ -1,7 +1,7 @@
 import "./Main.css";
 import Card from "../Card/Card";
 
-function Main({cards}) {
+function Main({cards, onClickLike}) {
     return (
         <main className="main">
             <ul className="main__places">
@@ -9,6 +9,7 @@ function Main({cards}) {
                     <Card
                         key={card.id}
                         card={card}
+                        onClickLike={onClickLike}
                     />
                 ))}
             </ul>
