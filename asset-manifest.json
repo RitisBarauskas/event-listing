@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/event-listing/static/css/main.50300be5.chunk.css",
+    "main.js": "/event-listing/static/js/main.8eb08631.chunk.js",
+    "main.js.map": "/event-listing/static/js/main.8eb08631.chunk.js.map",
+    "runtime-main.js": "/event-listing/static/js/runtime-main.abfe996c.js",
+    "runtime-main.js.map": "/event-listing/static/js/runtime-main.abfe996c.js.map",
+    "static/js/2.d3656153.chunk.js": "/event-listing/static/js/2.d3656153.chunk.js",
+    "static/js/2.d3656153.chunk.js.map": "/event-listing/static/js/2.d3656153.chunk.js.map",
+    "static/js/3.7553419b.chunk.js": "/event-listing/static/js/3.7553419b.chunk.js",
+    "static/js/3.7553419b.chunk.js.map": "/event-listing/static/js/3.7553419b.chunk.js.map",
+    "index.html": "/event-listing/index.html",
+    "static/css/main.50300be5.chunk.css.map": "/event-listing/static/css/main.50300be5.chunk.css.map",
+    "static/js/2.d3656153.chunk.js.LICENSE.txt": "/event-listing/static/js/2.d3656153.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/event-listing/static/media/Avenir-Roman.eced1343.woff",
+    "static/media/arc_nav.c381148f.svg": "/event-listing/static/media/arc_nav.c381148f.svg",
+    "static/media/Header.css": "/event-listing/static/media/like.405cea49.svg",
+    "static/media/Card.css": "/event-listing/static/media/like_active.e1bc097d.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.abfe996c.js",
+    "static/js/2.d3656153.chunk.js",
+    "static/css/main.50300be5.chunk.css",
+    "static/js/main.8eb08631.chunk.js"
+  ]
+}
