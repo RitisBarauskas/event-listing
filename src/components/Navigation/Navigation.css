@@ -64,6 +64,10 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    width: 178px;
+}
+
+.navigation__item-text_head {
     width: 140px;
 }
 

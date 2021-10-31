@@ -19,7 +19,7 @@ function getAllMonths(cards, selectedMonth) {
         month = selectedMonth;
         months.splice(months.indexOf(month), 1);
     } else {
-        month = months.shift()
+        month = months[0]
     }
     return [month, months]
 }
@@ -38,7 +38,7 @@ function getAllCites(cards, selectedCity) {
         city = selectedCity;
         cites.splice(cites.indexOf(city), 1);
     } else {
-        city = cites.shift();
+        city = cites[0];
     }
     return [city, cites]
 }
@@ -60,11 +60,12 @@ function App() {
 
     useEffect(() => {
         api.getAllEvents().then((cards) => {
-            setMonth(getAllMonths(cards)[0]);
-            setCity(getAllCites(cards)[0]);
             setMonths(getAllMonths(cards)[1]);
             setCites(getAllCites(cards)[1]);
-            setCards(cards);
+            setMonth(getAllMonths(cards)[0]);
+            setCity(getAllCites(cards)[0]);
+            const newCards = getSelectedCards(cards, cards[0].date.split('.')[1], cards[0].city);
+            setCards(newCards);
         }).catch((err) => console.log(err));
     }, []);
 
@@ -86,6 +87,10 @@ function App() {
         })
     }
 
+    const handleLikeClick = (card) => {
+        console.log(card);
+    }
+
   return (
       <div className="app">
           <div className="app__container">
@@ -101,6 +106,7 @@ function App() {
                       />
                       <Main
                         cards={cards}
+                        onClickLike={handleLikeClick}
                       />
                   </Route>
               </Switch>

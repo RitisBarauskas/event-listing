@@ -23,7 +23,7 @@ function Navigation({months, cites, city, month, onClickCity, onClickMonth}) {
                 <div className="navigation__container">
                     <ul className="navigation__list">
                         <li className="navigation__item" onClick={_ => onClickCity(city)}>
-                            <p className="navigation__item-text">
+                            <p className="navigation__item-text navigation__item-text_head">
                                 {city}
                             </p>
                         </li>
@@ -45,7 +45,7 @@ function Navigation({months, cites, city, month, onClickCity, onClickMonth}) {
                 <div className="navigation__container">
                     <ul className="navigation__list">
                         <li className="navigation__item" onClick={_ => onClickMonth(month)}>
-                            <p className="navigation__item-text">
+                            <p className="navigation__item-text navigation__item-text_head">
                                 {monthsName[month]}
                             </p>
                         </li>
