@@ -73,3 +73,36 @@
     line-height: 66px;
     color: #fff;
 }
+
+@media screen and (max-width: 1520px) {
+    .card {
+        width: 540px;
+        height: 360px;
+    }
+    .card__image {
+        width: 540px;
+        height: 360px;
+    }
+}
+
+@media screen and (max-width: 1220px) {
+    .card {
+        width: 600px;
+        height: 400px;
+    }
+    .card__image {
+        width: 600px;
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .card {
+        width: 540px;
+        height: 360px;
+    }
+    .card__image {
+        width: 540px;
+        height: 360px;
+    }
+}

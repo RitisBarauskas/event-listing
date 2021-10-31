@@ -11,4 +11,31 @@
   border-radius: 16px;
   box-shadow: 0 16px 32px rgba(0, 0, 0, .12);
   padding: 100px;
+  min-width: 540px;
+}
+
+
+@media screen and (max-width: 1599px) {
+  .app {
+    padding: 40px;
+  }
+}
+
+@media screen and (max-width: 1520px) {
+  .app__container {
+    padding: 40px;
+    max-width: 1100px;
+  }
+}
+
+@media screen and (max-width: 1220px) {
+  .app__container {
+    max-width: 600px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .app__container {
+    max-width: 540px;
+  }
 }

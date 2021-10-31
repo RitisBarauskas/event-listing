@@ -13,3 +13,25 @@
     padding: 0;
 }
 
+@media screen and (max-width: 1520px) {
+    .main__places {
+        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 540px));
+        grid-auto-rows: minmax(200px, 360px);
+    }
+}
+
+@media screen and (max-width: 1220px) {
+    .main__places {
+        gap: 40px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 600px));
+        grid-auto-rows: minmax(200px, 400px);
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .main__places {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 540px));
+        grid-auto-rows: minmax(200px, 360px);
+    }
+}

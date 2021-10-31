@@ -109,3 +109,16 @@
     right: 22px;
     position: absolute;
 }
+
+@media screen and (max-width: 760px) {
+    .navigation {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .navigation__section {
+        margin: 0;
+    }
+    .navigation__section:first-of-type {
+        margin-bottom: 20px;
+    }
+}
