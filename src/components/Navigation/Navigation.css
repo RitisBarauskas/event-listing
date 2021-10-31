@@ -52,6 +52,21 @@
     border-radius: 6px;
 }
 
+.navigation__item-text {
+    margin: 0 0 0 22px;
+    font-family: Avenir, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 33px;
+    color: #2e282c;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 140px;
+}
+
 .navigation__item_sub {
     background-color: #fff;
     margin-top: 1px;
@@ -82,15 +97,7 @@
 }
 
 .navigation__link {
-    padding: 9px 0 0 22px;
-    height: 39px;
-    font-family: Avenir, Arial, sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 33px;
-    color: #2e282c;
-    text-decoration: none;
+
     width: 200px;
 }
 

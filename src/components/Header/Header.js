@@ -2,7 +2,7 @@ import "./Header.css";
 import Navigation from "../Navigation/Navigation";
 
 
-function Header({months, cites, city, month}) {
+function Header({months, cites, city, month, onClickCity, onClickMonth}) {
     return (
         <header className="header">
             <h1 className="header__title">
@@ -13,6 +13,8 @@ function Header({months, cites, city, month}) {
                 cites={cites}
                 city={city}
                 month={month}
+                onClickCity={onClickCity}
+                onClickMonth={onClickMonth}
             />
         </header>
     )
