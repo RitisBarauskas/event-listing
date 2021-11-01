@@ -7,7 +7,7 @@ import api from "../../utils/Api";
 
 function getAllMonths(cards, selectedMonth) {
     const months = []
-    cards.map(card => {
+    cards.forEach(card => {
         const month = card.date.split('.')[1];
         if (!months.includes(month)) {
             months.push(month);
@@ -19,14 +19,14 @@ function getAllMonths(cards, selectedMonth) {
         month = selectedMonth;
         months.splice(months.indexOf(month), 1);
     } else {
-        month = months[0]
+        month = months.shift()
     }
     return [month, months]
 }
 
 function getAllCites(cards, selectedCity) {
     const cites = []
-    cards.map(card => {
+    cards.forEach(card => {
         const city = card.city;
         if (!cites.includes(city)) {
             cites.push(city);
@@ -38,7 +38,7 @@ function getAllCites(cards, selectedCity) {
         city = selectedCity;
         cites.splice(cites.indexOf(city), 1);
     } else {
-        city = cites[0];
+        city = cites.shift();
     }
     return [city, cites]
 }
@@ -68,11 +68,15 @@ function App() {
 
     useEffect(() => {
         api.getAllEvents().then((cards) => {
-            setMonths(getAllMonths(cards)[1]);
-            setCites(getAllCites(cards)[1]);
-            setMonth(cards[0].date.split('.')[1]);
-            setCity(cards[0].city);
-            const newCards = getSelectedCards(cards, cards[0].date.split('.')[1], cards[0].city);
+            const month = cards[0].date.split('.')[1]
+            const city = cards[0].city;
+            return {cards, month, city};
+        }).then(({cards, month, city}) => {
+            setCity(city);
+            setMonth(month);
+            setMonths(getAllMonths(cards, month)[1]);
+            setCites(getAllCites(cards, city)[1]);
+            const newCards = getSelectedCards(cards, month, city);
             setCards(newCards);
             setFavorites(localStorage.length);
         }).catch((err) => console.log(err));
